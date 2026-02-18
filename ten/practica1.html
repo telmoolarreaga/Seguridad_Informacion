@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 01 — NullSector</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="bracket">[</span>NULL<span class="accent">SECTOR</span><span class="bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">inicio</a></li>
+      <li><a href="practica1.html" class="active">práctica_01</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-breadcrumb">// nullsector / practicas / practica_01</div>
+    <h1 class="page-title">Práctica <span class="accent-line">01</span></h1>
+    <p class="page-subtitle">Gestión de USB Booteable</p>
+    <div class="meta-row">
+      <span class="meta-tag">Ubuntu Live</span>
+      <span class="meta-tag">Rufus</span>
+      <span class="meta-tag">BIOS Boot</span>
+      <span class="meta-tag">Disk Analysis</span>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="practica-main">
+
+    <!-- BLOQUE 1 -->
+    <section class="practica-block">
+      <div class="block-header">
+        <span class="block-num">01</span>
+        <h2>Instalación de Linux en USB Booteable</h2>
+      </div>
+
+      <div class="practica-grid">
+        <div class="practica-card">
+          <div class="practica-label">a. Sistemas operativos analizados</div>
+          <p>Para el USB booteable usamos el sistema <strong>Ubuntu</strong>, aunque también se valoró <strong>Kali Linux</strong> como alternativa orientada a pentesting.</p>
+        </div>
+        <div class="practica-card">
+          <div class="practica-label">b. Herramientas para crear el USB</div>
+          <p>Utilizamos <strong>Rufus</strong> para crear el USB booteable, configurándolo con la imagen ISO de Ubuntu.</p>
+        </div>
+        <div class="practica-card">
+          <div class="practica-label">c. Prueba de funcionamiento</div>
+          <p>Probamos el USB en <strong>3 ordenadores del grupo</strong>. En todos arrancó correctamente el sistema Linux. Solo pudimos acceder a los discos sin contraseña en el ordenador más antiguo.</p>
+        </div>
+        <div class="practica-card featured-card">
+          <div class="practica-label">d. Decisiones tomadas</div>
+          <p>Elegimos <strong>Ubuntu</strong> en lugar de Kali Linux porque es más estable, sencillo y suficiente para comprobar el acceso a discos y archivos. No necesitábamos herramientas avanzadas de pentesting para esta práctica.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOQUE 2 -->
+    <section class="practica-block">
+      <div class="block-header">
+        <span class="block-num">02</span>
+        <h2>Ejecución del SO desde USB en los Equipos del Grupo</h2>
+      </div>
+
+      <div class="practica-grid">
+        <div class="practica-card">
+          <div class="practica-label">a. Prueba sin instalación</div>
+          <p>Ejecutamos Ubuntu en modo Live y pudimos usar el sistema operativo completo sin necesidad de instalarlo en ningún disco.</p>
+        </div>
+        <div class="practica-card">
+          <div class="practica-label">b. Modificación de BIOS</div>
+          <p>En los <strong>3 ordenadores</strong> fue necesario modificar el orden de arranque en la BIOS, poniendo el USB por delante del disco de Windows. En algunos equipos no había contraseña de BIOS configurada.</p>
+        </div>
+      </div>
+
+      <!-- HALLAZGOS - tabla visual -->
+      <div class="findings-table">
+        <div class="findings-header">
+          <div>Ordenador</div>
+          <div>Acceso BIOS</div>
+          <div>Ver archivos</div>
+          <div>Modificar archivos</div>
+          <div>Cifrado</div>
+        </div>
+        <div class="findings-row">
+          <div class="eq-name">Equipo 1 <span class="tag-old">Antiguo</span></div>
+          <div class="status ok">✓ Sin pass</div>
+          <div class="status ok">✓ Acceso total</div>
+          <div class="status ok">✓ Editable</div>
+          <div class="status fail">✗ Sin cifrado</div>
+        </div>
+        <div class="findings-row">
+          <div class="eq-name">Equipo 2</div>
+          <div class="status warn">⚠ Con pass</div>
+          <div class="status fail">✗ Bloqueado</div>
+          <div class="status fail">✗ Bloqueado</div>
+          <div class="status ok">✓ Cifrado</div>
+        </div>
+        <div class="findings-row">
+          <div class="eq-name">Equipo 3</div>
+          <div class="status warn">⚠ Con pass</div>
+          <div class="status fail">✗ Bloqueado</div>
+          <div class="status fail">✗ Bloqueado</div>
+          <div class="status ok">✓ Cifrado</div>
+        </div>
+      </div>
+
+      <div class="practica-grid" style="margin-top: 1.5rem;">
+        <div class="practica-card">
+          <div class="practica-label">c. Análisis de discos Windows</div>
+          <p>En el <strong>equipo más antiguo</strong> accedimos al disco de Windows y vimos carpetas como <code>Users</code>, <code>Documents</code>, <code>Desktop</code> y <code>Program Files</code>. <strong>No se solicitó contraseña</strong> en ningún momento.</p>
+        </div>
+        <div class="practica-card alert-card">
+          <div class="practica-label">d. ¿Información sensible visible?</div>
+          <p>✓ <strong>Sí</strong>, conseguimos acceder a información sensible del usuario de Windows desde el sistema operativo del USB en al menos un equipo.</p>
+        </div>
+        <div class="practica-card alert-card">
+          <div class="practica-label">e. ¿Modificación posible?</div>
+          <p>✓ <strong>Sí</strong>, en ese ordenador era posible modificar, borrar y crear archivos en el disco de Windows desde el sistema Ubuntu Live.</p>
+        </div>
+        <div class="practica-card">
+          <div class="practica-label">f. Diferencias entre equipos</div>
+          <p>Todos los equipos eran <strong>Lenovo</strong> (ninguno Apple), pero solo el más antiguo era vulnerable. Las diferencias principales fueron: uso o no de <strong>cifrado de disco</strong>, antigüedad del hardware y versión del sistema operativo Windows.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOQUE EXTRA -->
+    <section class="practica-block">
+      <div class="block-header">
+        <span class="block-num accent-num">EX</span>
+        <h2>Preguntas Extra</h2>
+      </div>
+
+      <div class="practica-grid">
+        <div class="practica-card code-card">
+          <div class="practica-label">a. Archivo para eliminar contraseña de Windows</div>
+          <p>La información de contraseñas se almacena en el archivo <strong>SAM</strong> (Security Account Manager):</p>
+          <div class="code-block">
+            <span class="code-path">C:\Windows\System32\Config\SAM</span>
+          </div>
+          <p style="margin-top: 0.75rem; font-size: 0.85rem; opacity: 0.7;">Este archivo está protegido en ejecución, pero puede ser atacado desde un sistema externo si el disco no está cifrado.</p>
+        </div>
+        <div class="practica-card code-card">
+          <div class="practica-label">b. Archivos que ejecutan en el arranque de Windows</div>
+          <p>Existen múltiples mecanismos de persistencia en Windows:</p>
+          <ul class="code-list">
+            <li><code>Carpeta Startup</code> — accesible por usuario</li>
+            <li><code>HKLM\...\Run</code> — clave de registro (sistema)</li>
+            <li><code>HKCU\...\RunOnce</code> — ejecución única por usuario</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORACIÓN -->
+    <section class="practica-block valoracion-block">
+      <div class="block-header">
+        <span class="block-num">VA</span>
+        <h2>Valoración</h2>
+      </div>
+      <div class="valoracion-grid">
+        <div class="val-item">
+          <div class="val-label">Utilidad</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar" style="--pct: 90%"></div>
+          </div>
+          <p>Utilidad <strong>alta</strong>. Entendimos los riesgos reales del acceso físico y comenzamos a plantear cifrar el disco del equipo más antiguo.</p>
+        </div>
+        <div class="val-item">
+          <div class="val-label">Dificultad</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar difficulty" style="--pct: 20%"></div>
+          </div>
+          <p>Dificultad <strong>baja</strong>. No tuvimos problemas significativos. Adecuada como primera práctica introductoria.</p>
+        </div>
+        <div class="val-item full">
+          <div class="val-label">¿Qué aprendimos?</div>
+          <p>Evaluar riesgos de acceso físico, concienciar sobre protección de equipos. También vimos usos legítimos: recuperar información perdida, resetear contraseñas olvidadas.</p>
+          <div class="protect-tags">
+            <span>🔒 Cifrar disco duro</span>
+            <span>🔑 Contraseña en BIOS</span>
+            <span>🚫 Desactivar arranque USB</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo"><span class="bracket">[</span>NULL<span class="accent">SECTOR</span><span class="bracket">]</span></div>
+    <p class="footer-sub">// conocimiento con responsabilidad</p>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
