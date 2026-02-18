@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Asier_GS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Usa la tipografía del sistema monospace por defecto; las líneas de arriba son por si cambias a otra fuente -->
+<link rel="stylesheet" href="assets/gonz.css">
+</head>
+<body>
+<!-- Pantalla principal -->
+  <main class="wrap" aria-live="polite">
+    <h1><span id="typer"></span><span class="caret" aria-hidden="true"></span></h1>
+
+    <button class="scroll-down" aria-label="Bajar a la siguiente sección">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/>
+      </svg>
+    </button>
+  </main>
+
+    <section id="next">
+    <h2>Tiempo restante para el examen de seguridad</h2>
+    <h2 class="not-subtle">El contador puede ser manualmente reiniciado para aumentar el tiempo...</h2>
+
+    <div id="countdown" class="countdown">
+        <div class="unit" data-unit="days">
+        <div class="flip">
+            <span class="front">00</span>
+            <span class="back">00</span>
+        </div>
+        <small>Days</small>
+        </div>
+
+        <div class="unit" data-unit="hours">
+        <div class="flip">
+            <span class="front">00</span>
+            <span class="back">00</span>
+        </div>
+        <small>Hours</small>
+        </div>
+
+        <div class="unit" data-unit="minutes">
+        <div class="flip">
+            <span class="front">00</span>
+            <span class="back">00</span>
+        </div>
+        <small>Minutes</small>
+        </div>
+
+        <div class="unit" data-unit="seconds">
+        <div class="flip">
+            <span class="front">00</span>
+            <span class="back">00</span>
+        </div>
+        <small>Seconds</small>
+        </div>
+    </div>
+    </section>
+
+    <!-- Tercer bloque -->
+    <section id="third">
+        <h2 class="not-subtle"></h2>
+        <h2 class="not-subtle">The next chapter begins when the clock hits zero.</h2>
+    </section>
+
+
+<script src="assets/gonz.js"></script>
+</body>
+</html>

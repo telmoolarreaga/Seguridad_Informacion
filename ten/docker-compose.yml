@@ -1,0 +1,12 @@
+services:
+  ten:
+    build: .
+    container_name: ten
+    env_file: .env
+    restart: always
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
