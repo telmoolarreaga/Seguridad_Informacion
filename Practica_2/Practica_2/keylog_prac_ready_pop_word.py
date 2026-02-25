@@ -7,7 +7,8 @@ import subprocess
 chrome_path = r"C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE"
 
 
-BASE_DIR = r"C:\Users\pemma\Downloads"
+#BASE_DIR = r"C:\Users\pemma\Downloads"
+BASE_DIR = r"C:\Users\Usuario\Documents\GitHub\Seguridad_Informacion\Practica_2\Practica_2"
 LOG_FILE = os.path.join(BASE_DIR, "teclas_log.txt")
 RAW_FILE = os.path.join(BASE_DIR, "RAW.txt")
 

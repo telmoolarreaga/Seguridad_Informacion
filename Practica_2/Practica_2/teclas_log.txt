@@ -1,0 +1,63 @@
+=== Inicio de sesión ===
+tecla tecleada: ENTER a las TIEMPO: 2026-02-25 15:54:53.733
+tecla tecleada: ENTER a las TIEMPO: 2026-02-25 15:54:53.891
+tecla tecleada: ENTER a las TIEMPO: 2026-02-25 15:54:54.083
+tecla tecleada: ENTER a las TIEMPO: 2026-02-25 15:54:57.219
+tecla tecleada: ENTER a las TIEMPO: 2026-02-25 15:54:57.376
+tecla tecleada: ENTER a las TIEMPO: 2026-02-25 15:54:57.541
+tecla tecleada: Key.shift a las TIEMPO: 2026-02-25 15:54:57.670
+tecla tecleada: C a las TIEMPO: 2026-02-25 15:54:57.849
+tecla tecleada: o a las TIEMPO: 2026-02-25 15:54:57.972
+tecla tecleada: m a las TIEMPO: 2026-02-25 15:54:58.154
+tecla tecleada: o a las TIEMPO: 2026-02-25 15:54:58.323
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:54:58.536
+tecla tecleada: n a las TIEMPO: 2026-02-25 15:54:58.721
+tecla tecleada: o a las TIEMPO: 2026-02-25 15:54:58.940
+tecla tecleada: s a las TIEMPO: 2026-02-25 15:54:59.077
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:54:59.155
+tecla tecleada: l a las TIEMPO: 2026-02-25 15:54:59.340
+tecla tecleada: o a las TIEMPO: 2026-02-25 15:54:59.488
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:54:59.702
+tecla tecleada: v a las TIEMPO: 2026-02-25 15:54:59.866
+tecla tecleada: a a las TIEMPO: 2026-02-25 15:54:59.936
+tecla tecleada: m a las TIEMPO: 2026-02-25 15:55:00.097
+tecla tecleada: o a las TIEMPO: 2026-02-25 15:55:00.283
+tecla tecleada: s a las TIEMPO: 2026-02-25 15:55:00.446
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:55:00.585
+tecla tecleada: a a las TIEMPO: 2026-02-25 15:55:00.731
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:55:00.794
+tecla tecleada: p a las TIEMPO: 2026-02-25 15:55:01.117
+tecla tecleada: a a las TIEMPO: 2026-02-25 15:55:01.223
+tecla tecleada: s a las TIEMPO: 2026-02-25 15:55:01.344
+tecla tecleada: a a las TIEMPO: 2026-02-25 15:55:01.470
+tecla tecleada: r a las TIEMPO: 2026-02-25 15:55:01.604
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:55:01.679
+tecla tecleada: e a las TIEMPO: 2026-02-25 15:55:01.813
+tecla tecleada: n a las TIEMPO: 2026-02-25 15:55:01.865
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:55:02.034
+tecla tecleada: m a las TIEMPO: 2026-02-25 15:55:02.225
+tecla tecleada: a a las TIEMPO: 2026-02-25 15:55:02.257
+tecla tecleada: r a las TIEMPO: 2026-02-25 15:55:02.439
+tecla tecleada: b a las TIEMPO: 2026-02-25 15:55:02.513
+tecla tecleada: e a las TIEMPO: 2026-02-25 15:55:02.630
+tecla tecleada: l a las TIEMPO: 2026-02-25 15:55:02.873
+tecla tecleada: l a las TIEMPO: 2026-02-25 15:55:02.995
+tecla tecleada: a a las TIEMPO: 2026-02-25 15:55:03.079
+tecla tecleada: Key.ctrl_l a las TIEMPO: 2026-02-25 15:55:03.314
+tecla tecleada:  a las TIEMPO: 2026-02-25 15:55:03.443
+tecla tecleada: Key.ctrl_l a las TIEMPO: 2026-02-25 15:55:40.635
+tecla tecleada:  a las TIEMPO: 2026-02-25 15:55:41.028
+tecla tecleada: Key.ctrl_l a las TIEMPO: 2026-02-25 15:55:47.136
+tecla tecleada:  a las TIEMPO: 2026-02-25 15:55:47.482
+tecla tecleada: Key.shift a las TIEMPO: 2026-02-25 15:55:53.243
+tecla tecleada: M a las TIEMPO: 2026-02-25 15:55:54.587
+tecla tecleada: I a las TIEMPO: 2026-02-25 15:55:54.768
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:55:54.950
+tecla tecleada: r a las TIEMPO: 2026-02-25 15:55:55.055
+tecla tecleada: u a las TIEMPO: 2026-02-25 15:55:55.156
+tecla tecleada: t a las TIEMPO: 2026-02-25 15:55:55.283
+tecla tecleada: a a las TIEMPO: 2026-02-25 15:55:55.508
+tecla tecleada: BACKSPACE a las TIEMPO: 2026-02-25 15:55:57.341
+tecla tecleada: BACKSPACE a las TIEMPO: 2026-02-25 15:55:57.510
+tecla tecleada: i a las TIEMPO: 2026-02-25 15:55:57.951
+tecla tecleada:   a las TIEMPO: 2026-02-25 15:55:58.164
