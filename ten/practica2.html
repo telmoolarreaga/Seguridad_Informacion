@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 02 — BENTEN</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="bracket">[</span>BEN<span class="accent">TEN</span><span class="bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">inicio</a></li>
+      <li><a href="practica1.html">práctica_01</a></li>
+      <li><a href="practica2.html" class="active">práctica_02</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-breadcrumb">// BENTEN / practicas / practica_02</div>
+    <h1 class="page-title">Práctica <span class="accent-line">02</span></h1>
+    <p class="page-subtitle">Ejecutable Malicioso con Keylogger</p>
+    <div class="meta-row">
+      <span class="meta-tag">Keylogger</span>
+      <span class="meta-tag">Python → .exe</span>
+      <span class="meta-tag">Ingeniería Social</span>
+      <span class="meta-tag">Acceso Físico</span>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="practica-main">
+
+    <!-- BLOQUE 1 -->
+    <section class="practica-block">
+      <div class="block-header">
+        <span class="block-num">01</span>
+        <h2>Herramienta/Aplicación (.exe) con Código Malicioso Oculto</h2>
+      </div>
+
+      <div class="practica-grid">
+        <div class="practica-card featured-card" style="grid-column: 1 / -1;">
+          <div class="practica-label">Objetivo</div>
+          <p>Crear una herramienta/aplicación <strong>.exe</strong> aparentemente legítima que oculta un <strong>keylogger</strong> ejecutándose en segundo plano. El ejecutable simula ser una versión de <strong>Word</strong> mientras registra todas las pulsaciones del teclado.</p>
+        </div>
+      </div>
+
+      <!-- CAPTURAS -->
+      <div class="block-header" style="margin-top: 2.5rem;">
+        <span class="block-num accent-num" style="font-size: 1.5rem;">📸</span>
+        <h2 style="font-size: 1.2rem;">Capturas de la herramienta y resultados</h2>
+      </div>
+
+      <div class="screenshot-gallery">
+        <div class="screenshot-card">
+          <div class="screenshot-label">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span>RAW.txt — Contenido capturado</span>
+          </div>
+          <div class="screenshot-img">
+            <img src="assets/captura_raw.png" alt="Captura de RAW.txt mostrando las pulsaciones capturadas en VS Code">
+          </div>
+          <p class="screenshot-desc">El archivo <code>RAW.txt</code> muestra el texto capturado por el keylogger: <em>"Muy sencilla esta practica Asier"</em>, confirmando que registra correctamente las pulsaciones.</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-label">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span>Word.exe — Nuestra versión de Word</span>
+          </div>
+          <div class="screenshot-img">
+            <img src="assets/captura_word.png" alt="Captura de Word.exe falso mostrando la interfaz">
+          </div>
+          <p class="screenshot-desc">El ejecutable <strong>Word.exe</strong> se presenta como un editor de texto legítimo mientras el keylogger trabaja en segundo plano de manera invisible.</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-label">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span>Archivos generados</span>
+          </div>
+          <div class="screenshot-img">
+            <img src="assets/captura_archivos.png" alt="Captura de los archivos RAW.txt y teclas_log.txt generados">
+          </div>
+          <p class="screenshot-desc">El keylogger genera dos archivos: <code>RAW.txt</code> (1 KB) con el texto limpio y <code>teclas_log.txt</code> (21 KB) con el registro completo de teclas pulsadas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOQUE 2 -->
+    <section class="practica-block">
+      <div class="block-header">
+        <span class="block-num">02</span>
+        <h2>Preguntas de Análisis</h2>
+      </div>
+
+      <div class="practica-grid">
+        <div class="practica-card alert-card">
+          <div class="practica-label">a. Señales de un ejecutable sospechoso</div>
+          <p>Como hemos visto en clase, se podría entrar al <strong>administrador de tareas</strong> y ver que se está ejecutando un "ejecutable sospechoso" en <strong>Background Processes</strong>. Además, se podrían apreciar indicios visuales:</p>
+          <ul class="code-list" style="margin-top: 0.75rem;">
+            <li>Imagen borrosa o incorrecta de la aplicación</li>
+            <li>Nombre incorrecto de la aplicación</li>
+          </ul>
+        </div>
+
+        <div class="practica-card code-card">
+          <div class="practica-label">b. Medidas para prevenir software no autorizado</div>
+          <p>Las organizaciones podrían usar <strong>"listas blancas"</strong> (whitelisting) para que sus sistemas sólo permitan la ejecución de archivos con <strong>firmas digitales</strong> de desarrolladores conocidos.</p>
+          <p style="margin-top: 0.75rem;">También podrían usar sistemas <strong>EDR</strong> (Endpoint Detection and Response), herramientas que detectan comportamientos sospechosos en tiempo real, como procesos que hacen <em>hooking</em> en el teclado.</p>
+          <ul class="code-list" style="margin-top: 0.75rem;">
+            <li>Usuarios sin permisos de administrador</li>
+            <li>No ocultar extensiones de archivos conocidos</li>
+            <li>Evitar que un <code>.exe</code> se haga pasar por un <code>.docx</code></li>
+          </ul>
+        </div>
+
+        <div class="practica-card">
+          <div class="practica-label">c. Papel de la ingeniería social</div>
+          <p>La ingeniería social es <strong>clave</strong> en este tipo de ataques porque:</p>
+          <ul class="code-list" style="margin-top: 0.75rem;">
+            <li>Explota la confianza, curiosidad o urgencia del usuario</li>
+            <li>Engaña al usuario para que ejecute el archivo voluntariamente</li>
+            <li>Se presenta como documentos, imágenes o software legítimo</li>
+            <li>Permite evadir controles técnicos</li>
+            <li>Es más efectiva cuando el usuario no está concienciado</li>
+          </ul>
+        </div>
+
+        <div class="practica-card alert-card">
+          <div class="practica-label">d. ¿Por qué el acceso físico incrementa el riesgo?</div>
+          <p>Es mucho más fácil atacar un dispositivo teniendo <strong>acceso físico</strong> que de manera digital, ya que la cantidad y severidad de los ataques es mayor. Los ataques más habituales que hemos visto en clase:</p>
+          <div class="attack-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+            <span class="meta-tag" style="border-color: rgba(255,60,90,0.4); color: var(--red); background: rgba(255,60,90,0.06);">⌨️ KEYLOGGER</span>
+            <span class="meta-tag" style="border-color: rgba(255,60,90,0.4); color: var(--red); background: rgba(255,60,90,0.06);">⚡ USB KILLER</span>
+            <span class="meta-tag" style="border-color: rgba(255,60,90,0.4); color: var(--red); background: rgba(255,60,90,0.06);">🦆 RUBBER DUCKY</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORACIÓN -->
+    <section class="practica-block valoracion-block">
+      <div class="block-header">
+        <span class="block-num">VA</span>
+        <h2>Valoración</h2>
+      </div>
+      <div class="valoracion-grid">
+        <div class="val-item">
+          <div class="val-label">Utilidad</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar" style="--pct: 85%"></div>
+          </div>
+          <p>Utilidad <strong>alta</strong>. Comprendimos lo fácil que es ocultar código malicioso en un ejecutable y la importancia de verificar siempre el origen del software.</p>
+        </div>
+        <div class="val-item">
+          <div class="val-label">Dificultad</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar difficulty" style="--pct: 25%"></div>
+          </div>
+          <p>Dificultad <strong>baja</strong>. Hemos contado con el código ya hecho en ALUD. Solo hemos tenido que entender el código, cambiar las rutas y descargar un icono para completar la práctica.</p>
+        </div>
+        <div class="val-item full">
+          <div class="val-label">¿Qué hemos aprendido?</div>
+          <p>Cómo un ejecutable aparentemente legítimo puede contener código malicioso, la importancia de los sistemas EDR, y por qué el acceso físico multiplica los vectores de ataque.</p>
+          <div class="protect-tags">
+            <span>🛡️ Whitelisting de aplicaciones</span>
+            <span>🔍 Sistemas EDR</span>
+            <span>👤 Sin permisos de admin</span>
+            <span>📄 Mostrar extensiones</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo"><span class="bracket">[</span>BEN<span class="accent">TEN</span><span class="bracket">]</span></div>
+    <p class="footer-sub">// conocimiento con responsabilidad</p>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
