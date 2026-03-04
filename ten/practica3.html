@@ -79,7 +79,7 @@
         <div class="practica-card code-card">
           <div class="practica-label">Código vulnerable</div>
           <div class="code-block" style="font-size:0.82rem; line-height:1.7;">
-            <span style="color:#666;">// ⚠️ VULNERABILIDAD</span><br>
+            <span style="color:#666;">// VULNERABILIDAD</span><br>
             <span style="color:#00ff88;">function</span> <span style="color:#00d4ff;">updateReflected</span>() {<br>
             &nbsp;&nbsp;<span style="color:#aaa;">const</span> input = <span style="color:#00d4ff;">getElementById</span>(<span style="color:#ffd700;">'reflectedInput'</span>).value;<br>
             &nbsp;&nbsp;result.<span style="color:#ff3c5a;">innerHTML</span> = input; <span style="color:#666;">// ← peligroso</span><br>
@@ -130,7 +130,7 @@
         <div class="practica-card code-card">
           <div class="practica-label">Código vulnerable</div>
           <div class="code-block" style="font-size:0.82rem; line-height:1.7;">
-            <span style="color:#666;">// ⚠️ VULNERABILIDAD</span><br>
+            <span style="color:#666;">// VULNERABILIDAD</span><br>
             <span style="color:#00ff88;">function</span> <span style="color:#00d4ff;">renderNotes</span>() {<br>
             &nbsp;&nbsp;<span style="color:#aaa;">const</span> note = localStorage.<span style="color:#00d4ff;">getItem</span>(<span style="color:#ffd700;">'userNote'</span>);<br>
             &nbsp;&nbsp;noteList.<span style="color:#ff3c5a;">innerHTML</span> = <span style="color:#ffd700;">`&lt;li&gt;${note}&lt;/li&gt;`</span>;<br>
@@ -161,7 +161,7 @@
         <div class="practica-card code-card">
           <div class="practica-label">Reflected XSS — versión segura</div>
           <div class="code-block" style="font-size:0.82rem; line-height:1.7;">
-            <span style="color:#666;">// ✅ SEGURO</span><br>
+            <span style="color:#666;">// SEGURO</span><br>
             <span style="color:#00ff88;">function</span> <span style="color:#00d4ff;">updateReflected</span>() {<br>
             &nbsp;&nbsp;<span style="color:#aaa;">const</span> input = <span style="color:#00d4ff;">getElementById</span>(<span style="color:#ffd700;">'reflectedInput'</span>).value;<br>
             &nbsp;&nbsp;result.<span style="color:#00ff88;">textContent</span> = input; <span style="color:#666;">// ← seguro</span><br>
@@ -172,7 +172,7 @@
         <div class="practica-card code-card">
           <div class="practica-label">Stored XSS — versión segura</div>
           <div class="code-block" style="font-size:0.82rem; line-height:1.7;">
-            <span style="color:#666;">// ✅ SEGURO</span><br>
+            <span style="color:#666;">// SEGURO</span><br>
             <span style="color:#00ff88;">function</span> <span style="color:#00d4ff;">renderNotes</span>() {<br>
             &nbsp;&nbsp;<span style="color:#aaa;">const</span> note = localStorage.<span style="color:#00d4ff;">getItem</span>(<span style="color:#ffd700;">'userNote'</span>);<br>
             &nbsp;&nbsp;<span style="color:#aaa;">const</span> li = document.<span style="color:#00d4ff;">createElement</span>(<span style="color:#ffd700;">'li'</span>);<br>
@@ -266,10 +266,10 @@
           <div class="val-label">¿Qué hemos aprendido?</div>
           <p>La diferencia entre Reflected y Stored XSS, por qué <code>innerHTML</code> es peligroso con input de usuario, y cómo una simple sustitución por <code>textContent</code> mitiga completamente el riesgo en estos ejemplos.</p>
           <div class="protect-tags">
-            <span>🛡️ textContent vs innerHTML</span>
-            <span>🔍 Sanitizar inputs</span>
-            <span>📋 Content Security Policy</span>
-            <span>🔒 HTTPOnly cookies</span>
+            <span> textContent vs innerHTML</span>
+            <span> Sanitizar inputs</span>
+            <span> Content Security Policy</span>
+            <span> HTTPOnly cookies</span>
           </div>
         </div>
       </div>
