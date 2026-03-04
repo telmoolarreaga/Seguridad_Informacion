@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Practica 3 - Vulnerabilidades XSS</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .vulnerable-box { border: 1px solid red; padding: 10px; margin-bottom: 20px; }
+        .secure-box { border: 1px solid green; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Práctica 3: Ataques XSS</h1>
+
+    <div class="vulnerable-box">
+        <h2>1. Reflected XSS (vulnerable)</h2>
+        <p>Lo que escribas aquí se inserta usando innerHTML</p>
+        <input type="text" id="reflectedInput" placeholder="Busca algo...">
+        <button onclick="updateReflected()">Buscar</button>
+        <p>Resultado: <span id="reflectedResult"></span></p>
+    </div>
+
+    <div class="vulnerable-box">
+        <h2>2. Stored XSS (vulnerable con localStorage)</h2>
+        <p>Añade una nota. Se guarda en localStorage y luego se renderiza con innerHTML</p>
+        <input type="text" id="noteInput" placeholder="Escribe una nota...">
+        <button onclick="saveNote()">Guardar nota</button>
+        <h3>Notas guardadas:</h3>
+        <ul id="noteList"></ul>
+    </div>
+
+    <hr>
+
+    <div class="secure-box" id="solucion">
+        <h2>Cómo "arreglarlo" en este caso concreto </h2>
+        <p>Si en lugar de <strong>innerHTML</strong> usas <strong>textContent</strong>, el payload se muestra como texto plano y el script no se ejecuta.</p>
+        <button onclick="clearStorage()">Limpiar localStorage</button>
+    </div>
+
+    <script>
+        // Lógica para Reflected XSS
+        function updateReflected() {
+            const input = document.getElementById('reflectedInput').value;
+            // VULNERABILIDAD: Uso de innerHTML
+            document.getElementById('reflectedResult').innerHTML = input;
+        }
+
+        // Lógica para Stored XSS
+        function saveNote() {
+            const note = document.getElementById('noteInput').value;
+            localStorage.setItem('userNote', note); // Se guarda en el navegador 
+            renderNotes();
+        }
+
+        function renderNotes() {
+            const savedNote = localStorage.getItem('userNote');
+            if (savedNote) {
+                // VULNERABILIDAD: Uso de innerHTML al recuperar datos
+                document.getElementById('noteList').innerHTML = `<li>${savedNote}</li>`;
+            }
+        }
+
+        function clearStorage() {
+            localStorage.removeItem('userNote');
+            location.reload();
+        }
+
+        // Renderizar notas al cargar la página
+        window.onload = renderNotes;
+    </script>
+</body>
+</html>
