@@ -32,8 +32,9 @@
     <hr>
 
     <div class="secure-box" id="solucion">
-        <h2>Cómo "arreglarlo" en este caso concreto </h2>
+        <h2>Cómo arreglarlo </h2>
         <p>Si en lugar de <strong>innerHTML</strong> usas <strong>textContent</strong>, el payload se muestra como texto plano y el script no se ejecuta.</p>
+        <p>Una posible solucion consiste en usar <strong>textContent</strong> en lugar de <strong>innerHTML</strong>.</p> Esto mostraria el payload como texto plano y no se ejecutaria el script.
         <button onclick="clearStorage()">Limpiar localStorage</button>
     </div>
 
