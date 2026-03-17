@@ -61,6 +61,40 @@
             </div>
           </div>
           <p class="screenshot-desc">Sabíamos que eran 4 caracteres minúsculas sin números ni caracteres especiales.</p>
+		  <pre style="background-color: #2b2b2b; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 14px; line-height: 1.5;">
+<code class="language-python">
+import hashlib
+import itertools
+import string
+import time
+
+# Leer el hash del archivo (solo lectura, no se sobrescribe)
+archivo = open("hash_guardado.txt", "r")
+hash_objetivo = archivo.read().strip()
+archivo.close()
+
+caracteres = string.ascii_lowercase  # letras a-z
+intentos = 0
+
+inicio = time.time()
+
+# Generar todas las combinaciones de 4 letras
+for combinacion in itertools.product(caracteres, repeat=4):
+    password = "".join(combinacion)
+
+    # Calcular hash SHA-256
+    hash_generado = hashlib.sha256(password.encode()).hexdigest()
+
+    intentos += 1
+
+    if hash_generado == hash_objetivo:
+        fin = time.time()
+        print("Contraseña encontrada:", password)
+        print("Intentos:", intentos)
+        print("Tiempo:", fin - inicio, "segundos")
+        break
+</code>
+</pre>
         </div>
 
         <div class="screenshot-card">
@@ -77,6 +111,42 @@
             </div>
           </div>
           <p class="screenshot-desc">Sabíamos que eran 7 caracteres, en minúsculas un solo número y que contenía "cr7".</p>
+		  <pre style="background-color: #2b2b2b; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 14px; line-height: 1.5;">
+<code class="language-python">
+import hashlib
+import itertools
+import string
+import time
+
+# Leer hash
+with open("hash_nuevo.txt", "r") as f:
+    hash_objetivo = f.read().strip()
+
+letras = string.ascii_lowercase
+inicio = time.time()
+intentos = 0
+
+# Como CR7 ya está en orden, necesitamos completar los 7 caracteres
+# El patrón: 'c', 'r', '7' + 4 letras
+# Vamos a colocar las 4 letras en las posiciones restantes (total 7)
+
+# Posiciones posibles para CR7
+# c en pos i, r en pos j>i, 7 en pos k>j
+# luego las 4 letras en las otras posiciones
+
+# Para simplificar, vamos a asumir CR7 al principio y generar todas combinaciones de 4 letras después
+for letras_restantes in itertools.product(letras, repeat=4):
+    password = 'cr7' + ''.join(letras_restantes)
+    hash_generado = hashlib.sha256(password.encode()).hexdigest()
+    intentos += 1
+
+    if hash_generado == hash_objetivo:
+        print("Contraseña encontrada:", password)
+        print("Intentos:", intentos)
+        print("Tiempo:", time.time() - inicio, "segundos")
+        exit()
+</code>
+</pre>
         </div>
       </div>
     </section>
